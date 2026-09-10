@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-demo-tf-bucket-12345"
+  bucket = "servicenow-learning-tf-20260910"
 
   tags = {
     Name        = "DemoBucket"
