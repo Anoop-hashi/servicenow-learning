@@ -19,8 +19,25 @@ resource "aws_ecs_cluster" "example" {
     value = "enabled"
   }
 
+  configuration {
+    execute_command_configuration {
+      logging = "OVERRIDE"
+
+      log_configuration {
+        cloud_watch_encryption_enabled = false
+        cloud_watch_log_group_name     = "/ecs/my-ecs-cluster"
+      }
+    }
+  }
+
+  service_connect_defaults {
+    namespace = "my-ecs-namespace"
+  }
+
   tags = {
     Name        = "my-ecs-cluster"
     Environment = "Dev"
+    ManagedBy   = "Terraform"
+    Purpose     = "DemoECSCluster"
   }
 }
