@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "example" {
   bucket = "servicenow-learning-tf-20260910"
 
   tags = {
-    Name        = "DemoBucket"
+    Name        = "DemoBucket123"
     Environment = "Dev"
     Project     = "ServiceNow-Learning"
     Owner       = "Anoop"
