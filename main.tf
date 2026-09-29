@@ -28,3 +28,14 @@ resource "aws_dynamodb_table" "example" {
     Name = "DemoDynamoDB"
   }
 }
+
+resource "aws_instance" "example" {
+  ami           = "ami-0dee22c13ea7a9a67" # Ubuntu 24.04 LTS in ap-south-1
+  instance_type = "t2.micro"
+
+  tags = {
+    Name        = "DemoEC2Instance"
+    Environment = "Dev"
+    Project     = "ServiceNow-Learning"
+  }
+}
